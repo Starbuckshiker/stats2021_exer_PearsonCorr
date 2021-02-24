@@ -4,11 +4,24 @@ output:
   md_document:
     variant: markdown_github
 ---
-
+```{r}
+dataset <- rio::import("ExamAnxiety.sav")
+```
 #  Correlation
 
 ## Create a scatterplot matrix
 
+```{r}
+jmv::corrMatrix(
+    data = dataset,
+    vars = vars(Code, Revise, Anxiety, Exam),
+    flag = TRUE,
+    n = TRUE,
+    ci = TRUE,
+    plots = TRUE,
+    plotDens = TRUE,
+    plotStats = TRUE)
+```
 I couldn't see how to create a scatterplot matrix in Jamovi right away so I found some R functions. The code is below.
 
 ```{r}
