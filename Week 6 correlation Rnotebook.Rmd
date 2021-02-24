@@ -5,7 +5,8 @@ output:
     variant: markdown_github
 ---
 ```{r}
-dataset <- rio::import("ExamAnxiety.sav")
+dataset = rio::import("ExamAnxiety.sav")
+data = dataset
 ```
 #  Correlation
 
